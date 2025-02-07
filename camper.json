@@ -1,0 +1,24 @@
+{
+    "Estudiantes": {
+        "0": {
+            "#NumeroDeIdentificacion":1098679990,
+            "Nombres": "Sayara Yurley",
+            "Apellidos": "Aparicio Arciniegas",
+            "Direccion": "Cra 28w #64-63",
+            "Acudiente": "Claudia Arciniegas",
+            "TelefonosDeContacto(# de celular y #fijo)": "3164388588",
+            "Estado": "Cursando",
+            "Riesgo": "Medio"
+        },
+        "1": {
+            "#NumeroDeIdentificacion":1095803005,
+            "Nombres": "Harley Yefrey",
+            "Apellidos": "Cabrales Vargas",
+            "Direccion": "cll 12A #9-68",
+            "Acudiente": "vaegas yadira",
+            "TelefonosDeContacto(# de celular y #fijo)": "3134822492",
+            "Estado": "Cursando",
+            "Riesgo": "Medio"
+        }
+    }
+}
