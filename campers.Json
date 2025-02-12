@@ -392,7 +392,6 @@
       "Nombres": "Pedro",
       "apellidos": "Gomez ",
       "Horarios": "",
-      "Ruta": "",
       "Estado": "Trainer"
     },
     "1": {
@@ -401,7 +400,6 @@
       "Nombres": "Jolver",
       "apellidos": "Pardo",
       "Horarios": "",
-      "Ruta": "",
       "Estado": "Trainer"
     },
     "2": {
@@ -410,7 +408,6 @@
       "Nombres": "Miguel",
       "apellidos": "Castro",
       "Horarios": "",
-      "Ruta": "",
       "Estado": "Trainer"
     },
     "3": {
@@ -419,7 +416,6 @@
       "Nombres": "Juan Carlos",
       "apellidos": "Mari\u00f1o",
       "Horarios": "",
-      "Ruta": "",
       "Estado": "Trainer"
     },
     "4": {
@@ -428,7 +424,6 @@
       "Nombres": "Carlos",
       "apellidos": "Rueda",
       "Horarios": "",
-      "Ruta": "",
       "Estado": "Trainer"
     }
   },
@@ -442,7 +437,8 @@
     }
   },
   "aulas": {
-    "Esputnik": {
+    "0":{
+      "Nombre":"Esputnik",
       "HoraDeInicio": "6 A.M.",
       "HoraDeFin": "10 P.M.",
       "Horarios": {
@@ -451,10 +447,15 @@
         "3": "2 P.M.-6 P.M.",
         "4": "6 P.M.-10 P.M."
       },
-      "Trainer": "",
-      "Ruta": ""
+      "HorariosDisponibles": {
+        "1": "6 A.M.-10 A.M.",
+        "2": "10 A.M.-12 M.",
+        "3": "2 P.M.-6 P.M.",
+        "4": "6 P.M.-10 P.M."
+      }
     },
-    "atermis": {
+    "1":{
+      "Nombre":"Atermis",
       "HoraDeInicio": "6 A.M.",
       "HoraDeFin": "10 P.M.",
       "Horarios": {
@@ -463,10 +464,15 @@
         "3": "2 P.M.-6 P.M.",
         "4": "6 P.M.-10 P.M."
       },
-      "Trainer": "Jolver Pardo",
-      "Ruta": ""
+      "HorariosDisponibles": {
+        "1": "6 A.M.-10 A.M.",
+        "2": "10 A.M.-12 M.",
+        "3": "2 P.M.-6 P.M.",
+        "4": "6 P.M.-10 P.M."
+      }
     },
-    "apolo": {
+    "2":{
+      "Nombre":"Apolo",
       "HoraDeInicio": "6 A.M.",
       "HoraDeFin": "10 P.M.",
       "Horarios": {
@@ -475,20 +481,12 @@
         "3": "2 P.M.-6 P.M.",
         "4": "6 P.M.-10 P.M."
       },
-      "Trainer": "",
-      "Ruta": ""
-    },
-    "Voyager": {
-      "HoraDeInicio": "6 A.M.",
-      "HoraDeFin": "10 P.M.",
-      "Horarios": {
+      "HorariosDisponibles": {
         "1": "6 A.M.-10 A.M.",
         "2": "10 A.M.-12 M.",
         "3": "2 P.M.-6 P.M.",
         "4": "6 P.M.-10 P.M."
-      },
-      "Trainer": "",
-      "Ruta": ""
+      }
     }
   },
   "Grupos": {
@@ -497,67 +495,68 @@
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {
+    }
     },
     "2": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     },
     "3": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     },
     "4": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     },
     "5": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     },
     "6": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     },
     "7": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     },
     "8": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     },
     "9": {
       "Horario": "",
       "Aula": "",
       "Ruta": "",
       "Trainer": "",
-      "Campers": {"":""}
+      "Campers": {}
     }
   },
   "Rutas": {
-    "Java": {
+    "0": {"Ruta":"Java",
       "Intro": [
         {
           "Proyecto60% ": "",
@@ -667,7 +666,7 @@
         }
       ]
     },
-    "NodeJS": {
+    "1": {"Ruta":"NodeJS",
       "Intro": [
         {
           "Proyecto60% ": "",
@@ -777,7 +776,7 @@
         }
       ]
     },
-    "NetCore": {
+    "2": {"Ruta":"NetCore",
       "Intro": [
         {
           "Proyecto60% ": "",
