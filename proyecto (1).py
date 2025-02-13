@@ -32,7 +32,7 @@ while zzz == True:
              "Direccion": direc,
              "acudiente": acu,
              "Telefonos": num, 
-             "Estado": "En espera",
+             "Estado": "Inscrito",
              "Jornada": "",
              "Ruta":{}
              }
@@ -63,7 +63,6 @@ while zzz == True:
                         opc=int(input(": "))
                         if opc==1:
                             for i in range (1):
-                                ssss=str(i)
                                 id1=d["Campers"][a]["#NumeroDeIdentificacion"]
                                 co1=d["Campers"][a]["Contraseña"]
                                 nom1=d["Campers"][a]["Nombres"]
@@ -72,10 +71,8 @@ while zzz == True:
                                 acu1=d["Campers"][a]["acudiente"]
                                 tel1=d["Campers"][a]["Telefonos"]
                                 est1=d["Campers"][a]["Estado"]
-                                ris1=d["Campers"][a]["Riesgo"]
                                 jor1=d["Campers"][a]["Jornada"]
-                                not1=d["Campers"][a]["Notas"]
-                                print("ID: ",id1," contraseña: ",co1," Nombres: ",nom1," Apellidos: ",apl1," Direccion: ",dir1," Acudiente: ",acu1," Telefono de contacto: ",tel1," Estado: ",est1," Riesgo: ",ris1," Jornada: ",jor1," Notas",not1)
+                                print("ID: ",id1," contraseña: ",co1," Nombres: ",nom1," Apellidos: ",apl1," Direccion: ",dir1," Acudiente: ",acu1," Telefono de contacto: ",tel1," Estado: ",est1," Jornada: ",jor1)
                         if opc==4:
                             z1=False
              if m==False:
@@ -94,14 +91,21 @@ while zzz == True:
                      while z2==True:
                         print("Que deseas hacer", d["Trainers"][z]["Nombres"], "?")  
                         print("1.Ver tu informacion")
-                        print("2. ver tus horarios")
                         print("3. Ver tus estudiantes")   
-                        print("4. Modificar notas")
-                        print("5. Cerrar sesion")
+                        print("4. Cerrar sesion")
                         opc=int(input(": "))
                         if opc==1:
-                           print(d["Trainers"][a])
-                        if opc==5:
+                             for i in range (1):
+                                f=str(a)
+
+                                idd1=d["Trainers"][f]["NumeroDeIdentificacion"]
+                                con1=d["Trainers"][f]["Contraseña"]
+                                nom1=d["Trainers"][f]["Nombres"]
+                                apl1=d["Trainers"][f]["apellidos"]
+                                hor1=d["Trainers"][f]["Horarios"]
+                                est1=d["Trainers"][f]["Estado"]
+                                print("ID: ",idd1," contraseña: ",con1," Nombres: ",nom1," Apellidos: ",apl1," Horario: ",hor1," Estado: ",est1)
+                        if opc==4:
                             z2=False
              if m==False:
                print("Contraseña o usuario icorrecto")
@@ -122,12 +126,14 @@ while zzz == True:
                        print("2. Ver la informacion de cada grupo")
                        print("3. Modificar informacion de estudiantes, trainers y coordinadores")
                        print("4. Asignar horarios a los trainers")
-                       print("5. Cambiar estado de los estudiantes a inactivo")
+                       print("5. Cambiar estado de los estudiantes a retirado")
                        print("6. modificar los grupos")
                        print("7. Añadir y ver aulas")
                        print("8. Asignar campers a su grupo")
-                        #cam1=d["Grupos"][ssss]["Campers"][""]
-                       print("9. Cerrar sesion")
+                       print("9. Quienes pasaron el examen de admision")
+                       print("10. Asignar notas")
+                       print("11. Crear grupos")
+                       print("12. Cerrar sesion")
                        opc=int(input(": "))
                        if opc==1:
                            print("A quien deseas verle la informacion")
@@ -211,6 +217,7 @@ while zzz == True:
                               d["Trainers"][motra]["Nombres"]=input("Dame el nombre modificado: ")
                               d["Trainers"][motra]["apellidos"]=input("Dame el apellido modificado: ")
                               d["Trainers"][motra]["Direccion"]=input("Dame la direccion modificada: ")
+                              guardarJSON(d)
                           if mo==3:
                               for i in range (len(d["Coordinadores"])):
                                  ssss=str(i)
@@ -223,6 +230,7 @@ while zzz == True:
                               d["Coordinadores"][mocor]["Contraseña"]=input("Dame la contaseña modificada: ")
                               d["Coordinadores"][mocor]["Nombres"]=input("Dame el nombre modificado: ")
                               d["Coordinadores"][mocor]["apellidos"]=input("Dame el apellido modificado: ")
+                              guardarJSON(d)
                        if opc==4:
                           for i in range (len(d["Coordinadores"])):
                               ssss=str(i)
@@ -244,7 +252,7 @@ while zzz == True:
                                  tel1=d["Campers"][ssss]["Estado"]
                                  print("ID: ",idd1," contraseña: ",con1," Nombres: ",nom1," Apellidos: ",apl1," Estado: ",tel1)
                                esta=(input("Cual es el estudiantes que quieres pasar a inactivo (ingrese ID)"))
-                               d["Campers"][esta]["Estado"]="inactivo"
+                               d["Campers"][esta]["Estado"]="Retirado"
                        if opc==6:
                             for i in range (len(d["Grupos"])):
                                 ssss=str(i+1)
@@ -260,25 +268,23 @@ while zzz == True:
                                print(v,". ",s)
                             aula9=str(input("Cual es la aula que quieres asignar: "))
                             d["Grupos"][au]["Aula"]=d["aulas"][aula9]["Nombre"]
-                            horario9=str(input("Cual es el horario a asignar: 1: (6 A.M.-10 A.M.) 2: (10 A.M.-12 M.) 3: (2 P.M.-6 P.M.) 4. (6 P.M.-10 P.M.)"))
+                            horario9=str(input("Cual es el horario a asignar: 1: (6 A.M.-10 A.M.) 2: (10 A.M.-12 M.) 3: (2 P.M.-6 P.M.) 4. (6 P.M.-10 P.M.): "))
                             d["Grupos"][au]["Horario"]=d["aulas"][aula9]["HorariosDisponibles"][horario9]
-                            rut9=str(input("Cual ruta deseas asignarle: 0. Java, 2 NodeJS, 3. NetCore"))
+                            rut9=str(input("Cual ruta deseas asignarle: 0. Java, 1. NodeJS, 2. NetCore"))
                             d["Grupos"][au]["Ruta"]=d["Rutas"][rut9]
-                            for i in range (len(d["Coordinadores"])):
+                            
+                            for i in range (len(d["Trainers"])):
                               ssss=str(i)
                               idd1=d["Trainers"][ssss]["NumeroDeIdentificacion"]
                               con1=d["Trainers"][ssss]["Contraseña"]
                               nom1=d["Trainers"][ssss]["Nombres"]
                               apl1=d["Trainers"][ssss]["apellidos"]
-                              print("ID: ",idd1," Contraseña: ",con1," Nombres: ",nom1," Apellidos: ",apl1," Estado: ",est1)
+                              print("ID: ",idd1," Contraseña: ",con1," Nombres: ",nom1," Apellidos: ",apl1)
                             tra9=str(input("Que trainer quieres asignarle (ingresa ID): "))
-                            d["Grupos"][au]["Trainer"]=d["Trainers"][tra9]
+                            d["Grupos"][au]["Trainer"]=d["Trainers"][tra9]["Nombres"]
 
 
                             guardarJSON(d)
-                            #horario1=input("Cual es el horario nuevo: 1: (6 A.M.-10 A.M.) 2: (10 A.M.-12 M.) 3: (2 P.M.-6 P.M.) 4. (6 P.M.-10 P.M.)")
-                            #horario1=d["Grupos"][gru1][""]
-                            #aula1=input("")
                        if opc==7:
                            for i in range(len(d["aulas"])):
                              ñ=str(i)
@@ -310,7 +316,8 @@ while zzz == True:
                              est1=d["Campers"][ssss]["Estado"]
                              jor1=d["Campers"][ssss]["Jornada"]
                              not1=d["Campers"][ssss]["Ruta"]
-                             print("ID: ",id1," contraseña: ",co1," Nombres: ",nom1," Apellidos: ",apl1," Direccion: ",dir1," Acudiente: ",acu1," Telefono de contacto: ",tel1," Estado: ",est1," Jornada: ",jor1," Ruta",not1)
+                             if est1=="Aprobado":
+                                 print("ID: ",id1," contraseña: ",co1," Nombres: ",nom1," Apellidos: ",apl1," Direccion: ",dir1," Acudiente: ",acu1," Telefono de contacto: ",tel1," Estado: ",est1," Jornada: ",jor1," Ruta",not1)
                          est2=int(input("A quien quieres añadir (ingresar ID): "))
                          est1=str(est2)
                          for i in range (len(d["Grupos"])):
@@ -322,7 +329,15 @@ while zzz == True:
                           print("Grupo: ",ssss," Horario: ",idd1," Aula: ",con1," Ruta: ",nom1," Trainer: ",apl1)
                          gru1=str(input("A cual grupo lo quieres añadir (ingrese numero de grupo):"))
                          s=str(len(d["Grupos"][gru1]["Campers"]))
-                         print()
+                         
+                         horario11=str(d["Grupos"][gru1]["Horario"])
+                         if d["Grupos"][gru1]["Ruta"]["Ruta"]=="Java":
+                            a=0
+                         if d["Grupos"][gru1]["Ruta"]["Ruta"]=="NodeJS":
+                            a=1
+                         if d["Grupos"][gru1]["Ruta"]["Ruta"]=="NetCore":
+                            a=2
+                         Ruta11=str(d["Rutas"][a])
 
                          d["Grupos"][gru1]["Campers"][s]={"#NumeroDeIdentificacion": d["Campers"][est1]["#NumeroDeIdentificacion"],
                          "Contraseña":  d["Campers"][est1]["Contraseña"],
@@ -333,15 +348,45 @@ while zzz == True:
                          "Telefonos":  d["Campers"][est1]["Telefonos"], 
                          "Estado":  "Cursando",
                          "Jornada":  d["Campers"][est1]["Jornada"],
-                         "Ruta": d["Campers"][est1]["Ruta"]
+                         "Ruta": Ruta11
                          }
+                         
+
                          d["Campers"][est1]["Estado"]="Cursando"
-                         d["Campers"][est1]["Jornada"]=d["Grupos"][gru1]["Horario"]
-                         d["Campers"][est1]["Ruta"]=d["Grupos"][gru1]["Ruta"]
+                         d["Campers"][est1]["Jornada"]=horario11
+                         d["Campers"][est1]["Ruta"]=Ruta11
                          
                          guardarJSON(d)
-
-                       if opc==9:
+                       if opc==9: 
+                          for i in range (len(d["Campers"])):
+                             ssss=str(i)
+                             id1=d["Campers"][ssss]["#NumeroDeIdentificacion"]
+                             co1=d["Campers"][ssss]["Contraseña"]
+                             nom1=d["Campers"][ssss]["Nombres"]
+                             apl1=d["Campers"][ssss]["apellidos"]
+                             dir1=d["Campers"][ssss]["Direccion"]
+                             acu1=d["Campers"][ssss]["acudiente"]
+                             tel1=d["Campers"][ssss]["Telefonos"]
+                             est1=d["Campers"][ssss]["Estado"]
+                             jor1=d["Campers"][ssss]["Jornada"]
+                             not1=d["Campers"][ssss]["Ruta"]
+                             
+                             if est1=="Inscrito":
+                                 print("ID: ",id1," contraseña: ",co1," Nombres: ",nom1," Apellidos: ",apl1," Direccion: ",dir1," Acudiente: ",acu1," Telefono de contacto: ",tel1," Estado: ",est1," Jornada: ",jor1," Ruta",not1)
+                          apro1=str(input("Quien aprobo (ingrese ID): "))
+                          d["Campers"][apro1]["Estado"]="Aprobado"
+                          guardarJSON(d)      
+                       if opc==11:
+                         for i in range(1):
+                             f=str(len(d["Grupos"])+1)
+                             d["Grupos"][f]={"Horario": "",
+                             "Aula": "",
+                             "Ruta": "",
+                             "Trainer": "",
+                             "Campers": {}
+                             }
+                             guardarJSON(d)
+                       if opc==12:
                            z3=False
              if m==False:
                  print("Contraseña o usuario icorrectos")
