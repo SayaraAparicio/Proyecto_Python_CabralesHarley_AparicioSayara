@@ -34,6 +34,4 @@ Deberás ejecutar estos pasos para descargar la información:
 ### Como se usa
 Se abre el modulo y empieza diciendo si desea registrarse o iniciar sesión, en caso de registrarse se deberá introducir los datos personales en caso de iniciar sesión se pedirá decir el tipo de usuario e ingresara id y contraseña, ya una vez accedido depende del tipo de usuario se podrá hacer las diferentes acciones .
 ### Link de sustentacion
-Presione ![aqui](https://drive.google.com/file/d/1Kku3Gyp1nSBNBsThzswPRqUmCmWHsNNe/view?usp=drive_link)
-
-
+Presione aqui https://drive.google.com/file/d/1Kku3Gyp1nSBNBsThzswPRqUmCmWHsNNe/view?usp=drive_link
